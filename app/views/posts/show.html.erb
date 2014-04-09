@@ -1,0 +1,56 @@
+<div class="col-md-1">tutaj kolumna boczna</div>
+<div class="col-md-8">
+
+<div class="media">
+        
+        <img class="media-object" src="http://tctechcrunch2011.files.wordpress.com/2014/03/mtv-emojis-diverse.jpg?w=208&h=156&crop=1" >
+     
+      <div class="media-body pull-left">
+        <h2 class="media-heading">
+            <%= @post.title %>
+        </h2>
+
+        <%= "#{@post.text} " * 300 %>
+ </div>
+</div>
+ 
+<hr>
+	<div class="icons">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=493875060647280";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+		
+		<a href="//plus.google.com/u/0/109628348799264681433?prsrc=3"
+		   rel="publisher" target="_top" style="text-decoration:none;display:inline-block;color:#333;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
+		<span style="display:inline-block;font-weight:bold;vertical-align:top;margin-right:5px; margin-top:0px;">follow</span><span style="display:inline-block;vertical-align:top;margin-right:13px; margin-top:0px;">on</span>
+		<img src="//ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/>
+		</a>
+
+	</div>
+<hr>
+
+<h5>Comments</h5>
+<%= render @post.comments %>
+ 
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
+ 
+
+
+    <div class="form-group form-inline" role="form" style="padding-left:0px">
+        <%=link_to 'Edit Post', edit_post_path(@post), {class: 'btn btn-default'} %>
+        <%=link_to 'Back to Posts', posts_path, {class: 'btn btn-default'} %>
+    </div>
+
+</div>
+<div class="col-md-3">tutaj kolumna boczna</div>
